@@ -1,7 +1,7 @@
-import { Pop } from "../utils/Pop.js"
-import { pokemonsService } from "../services/PokemonsService.js"
 import { AppState } from "../AppState.js"
 import { Pokemon } from "../models/Pokemon.js"
+import { pokemonsService } from "../services/PokemonsService.js"
+import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
 
 

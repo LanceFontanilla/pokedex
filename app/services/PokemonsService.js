@@ -6,7 +6,6 @@ import { pokeapi } from "../env.js";
 class PokemonsService {
 
     async getPokemons() {
-
         const res = await pokeapi.get('pokemon?limit=151')
         console.log('GOT POKEMON', res.data);
         AppState.pokemonList = res.data.results

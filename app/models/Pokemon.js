@@ -16,8 +16,7 @@ export class Pokemon {
 
     }
 
-    static PokemonListTemplate() {
-        let pokemons = 'pokemon?offset=151&limit=151'
+    static PokemonListTemplate(pokemons) {
         return `
         <p class ="selectable text-light py-1 rounded mb-0" onclick="app.PokemonsController.getOnePokemon('${pokemons.index}">${pokemons.name}</p>
 

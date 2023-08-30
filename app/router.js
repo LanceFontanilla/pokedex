@@ -13,8 +13,12 @@ export const router = [
     path: '',
     controller: PokemonsController,
     view: /*html*/`
-    <div class="card">
-Pokemons
+      <div class="container-fluid">
+    <section class="row" >
+    <div id="pokemon-list" class="col-3 bg-dark"></div>
+ 
+
+    </section>
     </div>
     `
   },
