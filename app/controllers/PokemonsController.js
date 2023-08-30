@@ -6,12 +6,20 @@ import { setHTML } from "../utils/Writer.js"
 
 
 
+function _drawActivePokemon() {
+    let activePokemon = AppState.activePokemon
+    if (activePokemon) {
+        setHTML('active-pokemon', activePokemon.activeTemplate)
+    }
+}
+
 function _drawPokemonsList() {
     let pokemons = AppState.pokemonList
     let listContent = ''
     pokemons.forEach(p => listContent += Pokemon.PokemonListTemplate(p))
     setHTML('pokemon-list', listContent)
 }
+
 
 
 export class PokemonsController {

@@ -16,9 +16,25 @@ export class Pokemon {
 
     }
 
+
+    get activeTemplate() {
+        return `
+                <div class="card p-3 sticky-top">
+        <div class="d-flex justify-content-between">
+          <h1 class="text-success">${this.name}</h1>
+    
+        </div>
+ 
+        
+        
+        `
+
+    }
+
+
     static PokemonListTemplate(pokemons) {
         return `
-        <p class ="selectable text-light py-1 rounded mb-0" onclick="app.PokemonsController.getOnePokemon('${pokemons.index}">${pokemons.name}</p>
+        <p class ="selectable text-light py-1 rounded mb-0" onclick="app.PokemonsController.getOnePokemon('${pokemons.index}'" >${pokemons.name}</p>
 
         `
     }
