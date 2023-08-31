@@ -28,7 +28,7 @@ export class Pokemon {
                 src="${this.img}"
                 alt="Pokemon">
             </div>
-            
+              ${this.catchPokemonButton}
             `
     }
 
@@ -40,6 +40,14 @@ export class Pokemon {
         `
     }
 
+    get catchPokemonButton() {
+        return `<button class="btn btn-success" onclick="app.SandboxPokemonsController.catchPokemon()"> Catch Pokemon!</button>`
+    }
 
+
+    get ListTemplate() {
+        return `
+        <div><p onclick="app.SandboxPokemonsController.setActivePokemon('${this.name}')" class = "selectable p-1 rounded mb-1">${this.name}</p></div>`
+    }
 
 }
