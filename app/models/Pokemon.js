@@ -4,11 +4,11 @@
 export class Pokemon {
     constructor(data) {
         this.name = data.name
-        this.nickName = data.nickName
-        this.img = data.img
+        this.nickName = data.nickName || this.name
+        this.img = data.img || data.sprites.front_default
         this.weight = data.weight
         this.height = data.height
-        this.types = data.types
+
 
         this.creatorID = data.creatorID
 
@@ -18,23 +18,24 @@ export class Pokemon {
 
 
     get activeTemplate() {
-        return `
-                <div class="card p-3 sticky-top">
-        <div class="d-flex justify-content-between">
-          <h1 class="text-success">${this.name}</h1>
-    
-        </div>
- 
-        
-        
-        `
-
+        return `<div class="row justify-content-center">${this.name}</div>
+            <div class="d-flex justify-content-between p-5">
+              <div>Height: ${this.height}</div>
+              <div>Weight: ${this.weight}</div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <img class="w-100"
+                src="${this.img}"
+                alt="Pokemon">
+            </div>
+            
+            `
     }
 
 
-    static PokemonListTemplate(pokemons) {
+    static PokemonListTemplate(pokemon) {
         return `
-        <p class ="selectable text-light py-1 rounded mb-0" onclick="app.PokemonsController.getOnePokemon('${pokemons.index}'" >${pokemons.name}</p>
+        <p class ="selectable text-light py-1 rounded mb-0" onclick="app.PokemonsController.getOnePokemon('${pokemon.name}')" >${pokemon.name}</p>
 
         `
     }

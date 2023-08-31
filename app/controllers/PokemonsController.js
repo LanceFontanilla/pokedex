@@ -11,6 +11,7 @@ function _drawActivePokemon() {
     if (activePokemon) {
         setHTML('active-pokemon', activePokemon.activeTemplate)
     }
+
 }
 
 function _drawPokemonsList() {
@@ -26,6 +27,7 @@ export class PokemonsController {
     constructor() {
         this.getPokemons()
         AppState.on('pokemonList', _drawPokemonsList)
+        AppState.on('activePokemon', _drawActivePokemon)
 
     }
 
@@ -38,15 +40,14 @@ export class PokemonsController {
         }
     }
 
-    async getOnePokemon(index) {
+    async getOnePokemon(name) {
         try {
-            console.log(index);
-            await pokemonsService.getOnePokemon(index)
+            console.log(name)
+            await pokemonsService.getOnePokemon(name)
         } catch (error) {
             Pop.error(error)
-            console.error(error)
+            console.log(error)
         }
     }
 }
-
 

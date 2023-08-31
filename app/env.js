@@ -1,9 +1,5 @@
 
 
-export const pokeapi = axios.create({
-    baseURL: 'https://pokeapi.co/api/v2/',
-    timeout: 5000
-})
 
 export const dev = window.location.origin.includes('localhost')
 export const baseURL = 'https://sandbox.codeworksacademy.com'

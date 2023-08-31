@@ -13,13 +13,16 @@ export const router = [
     path: '',
     controller: PokemonsController,
     view: /*html*/`
-      <div class="container-fluid">
-    <section class="row" >
-    <div id="pokemon-list" class="col-3 bg-dark"></div>
- 
-
-    </section>
-    </div>
+    <div class="container-fluid">
+        <section class="row">
+          <div id="pokemon-list" class="col-3 bg-dark"></div>
+          <div id="active-pokemon" class="col-6"></div>
+          <div class="col-3 bg-dark text-light">
+            <div class="text-success" id="pokemon-count"> </div>
+            <div id="my-pokemon"></div>
+          </div>
+        </section>
+      </div>
     `
   },
   {
